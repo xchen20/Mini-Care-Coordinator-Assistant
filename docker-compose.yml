@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/db_data:/app/db_data
+      - ./backend/vector_db:/app/vector_db
+      # We don't need to mount schema.sql and data sheets anymore if they are part of the build context,
+      # but keeping them can be useful for quick changes without rebuilding.
+      - ./backend/schema.sql:/app/schema.sql
+      - ./backend/data_sheet.json:/app/data_sheet.json
+      - ./backend/patient_sheet.json:/app/patient_sheet.json
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY} # Pass the key from your host environment
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/usr/src/app # Mount the host src directory to the container src directory for hot-reloading
+      - /usr/src/app/node_modules # Do not mount the host node_modules directory

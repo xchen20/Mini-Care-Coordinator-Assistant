@@ -1,0 +1,251 @@
+{
+  "InitialPatientData": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "dob": "1975-01-01",
+      "pcp": "Grey, Meredith",
+      "ehrId": "1234abcd",
+      "insurance": {
+        "primary": {
+          "payer": "Aetna",
+          "plan": "Aetna Choice POS II",
+          "member_id": "AET1234567",
+          "group_number": "G12345"
+        },
+        "secondary": null
+      },
+      "referred_providers": [
+        {
+          "provider_id": "house_gregory",
+          "name": "House, Gregory",
+          "specialty": "Orthopedics",
+          "department": "PPTH Orthopedics",
+          "location_name": "PPTH Orthopedics",
+          "location_address": "101 Pine St, Greensboro, NC 27401",
+          "hours": "Mon–Wed 09:00–17:00"
+        },
+        {
+          "specialty": "Primary Care",
+          "department": "Sloan Primary Care",
+          "location_name": "Sloan Primary Care",
+          "location_address": "202 Maple St, Winston-Salem, NC 27101",
+          "hours": "Mon–Fri 09:00–17:00",
+          "candidate_providers": [
+            {
+              "provider_id": "grey_meredith",
+              "name": "Grey, Meredith"
+            }
+          ]
+        }
+      ],
+      "appointments": [
+        {
+          "date": "2018-03-05",
+          "time": "09:15:00",
+          "timezone": "America/New_York",
+          "provider_id": "grey_meredith",
+          "provider": "Grey, Meredith",
+          "department": "Sloan Primary Care",
+          "location_name": "Sloan Primary Care",
+          "location_address": "202 Maple St, Winston-Salem, NC 27101",
+          "status": "completed"
+        },
+        {
+          "date": "2024-08-12",
+          "time": "14:30:00",
+          "timezone": "America/New_York",
+          "provider_id": "house_gregory",
+          "provider": "House, Gregory",
+          "department": "PPTH Orthopedics",
+          "location_name": "PPTH Orthopedics",
+          "location_address": "101 Pine St, Greensboro, NC 27401",
+          "status": "completed",
+          "reason": "Post-hospital referral"
+        },
+        {
+          "date": "2024-09-17",
+          "time": "10:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "grey_meredith",
+          "provider": "Grey, Meredith",
+          "department": "Sloan Primary Care",
+          "location_name": "Sloan Primary Care",
+          "location_address": "202 Maple St, Winston-Salem, NC 27101",
+          "status": "noshow"
+        },
+        {
+          "date": "2024-11-25",
+          "time": "11:30:00",
+          "timezone": "America/New_York",
+          "provider_id": "grey_meredith",
+          "provider": "Grey, Meredith",
+          "department": "Sloan Primary Care",
+          "location_name": "Sloan Primary Care",
+          "location_address": "202- Maple St, Winston-Salem, NC 27101",
+          "status": "cancelled"
+        },
+        {
+          "date": "2019-01-15",
+          "time": "13:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "house_gregory",
+          "provider": "House, Gregory",
+          "department": "PPTH Orthopedics",
+          "location_name": "PPTH Orthopedics",
+          "location_address": "101 Pine St, Greensboro, NC 27401",
+          "status": "cancelled"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "dob": "1980-05-15",
+      "pcp": "Perry, Chris",
+      "ehrId": "5678efgh",
+      "insurance": {
+        "primary": {
+          "payer": "Cigna",
+          "plan": "Cigna Open Access Plus",
+          "member_id": "CIG9876543",
+          "group_number": "G54321"
+        },
+        "secondary": null
+      },
+      "referred_providers": [],
+      "appointments": [
+        {
+          "date": "2022-06-01",
+          "time": "14:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "perry_chris",
+          "provider": "Perry, Chris",
+          "department": "Sacred Heart Surgical Department",
+          "location_name": "Sacred Heart Surgical Department",
+          "location_address": "123 Main St, Raleigh, NC 27601",
+          "status": "completed"
+        },
+        {
+          "date": "2023-11-11",
+          "time": "11:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "yang_cristina",
+          "provider": "Yang, Cristina",
+          "department": "Seattle Grace Cardiac Surgery",
+          "location_name": "Seattle Grace Cardiac Surgery",
+          "location_address": "456 Elm St, Charlotte, NC 28202",
+          "status": "noshow"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Richard Roe",
+      "dob": "1990-03-22",
+      "pcp": "Perry, Chris",
+      "ehrId": "9101ghij",
+      "insurance": {
+        "primary": {
+          "payer": "Blue Cross Blue Shield of North Carolina",
+          "plan": "Blue Advantage",
+          "member_id": "BCBSNC112233",
+          "group_number": "G67890"
+        },
+        "secondary": {
+          "payer": "Aetna",
+          "plan": "Aetna Supplemental",
+          "member_id": "AETSUPP4455",
+          "group_number": "GSUPP1"
+        }
+      },
+      "referred_providers": [
+        {
+          "provider_id": "brennan_temperance",
+          "name": "Brennan, Temperance",
+          "specialty": "Orthopedics",
+          "department": "Jefferson Hospital",
+          "location_name": "Jefferson Hospital",
+          "location_address": "202 Maple St, Claremont, NC 28610",
+          "hours": "Tu-Th 10am-4pm"
+        }
+      ],
+      "appointments": [
+        {
+          "date": "2023-05-20",
+          "time": "10:30:00",
+          "timezone": "America/New_York",
+          "provider_id": "perry_chris",
+          "provider": "Perry, Chris",
+          "department": "Sacred Heart Surgical Department",
+          "location_name": "Sacred Heart Surgical Department",
+          "location_address": "123 Main St, Raleigh, NC 27601",
+          "status": "completed"
+        },
+        {
+          "date": "2024-01-20",
+          "time": "09:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "brennan_temperance",
+          "provider": "Brennan, Temperance",
+          "department": "Jefferson Hospital",
+          "location_name": "Jefferson Hospital",
+          "location_address": "202 Maple St, Claremont, NC 28610",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Emily Stone",
+      "dob": "1985-11-10",
+      "pcp": "Grey, Meredith",
+      "ehrId": "1112klmn",
+      "insurance": {
+        "primary": {
+          "payer": "United Health Care",
+          "plan": "UHC Navigate",
+          "member_id": "UHC4567890",
+          "group_number": "G11223"
+        },
+        "secondary": null
+      },
+      "referred_providers": [],
+      "appointments": [
+        {
+          "date": "2017-08-01",
+          "time": "16:00:00",
+          "timezone": "America/New_York",
+          "provider_id": "grey_meredith",
+          "provider": "Grey, Meredith",
+          "department": "Sloan Primary Care",
+          "location_name": "Sloan Primary Care",
+          "location_address": "202 Maple St, Winston-Salem, NC 27101",
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "dob": "2001-07-01",
+      "pcp": null,
+      "ehrId": "3344opqr",
+      "insurance": {
+        "primary": {
+          "payer": "Medicaid",
+          "plan": "NC Medicaid Direct",
+          "member_id": "MCD556677",
+          "group_number": "NCD123"
+        },
+        "secondary": null
+      },
+      "referred_providers": [
+        {
+          "specialty": "Primary Care"
+        }
+      ],
+      "appointments": []
+    }
+  ]
+}
