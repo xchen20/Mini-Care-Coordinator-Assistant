@@ -80,6 +80,14 @@ class CareDataManager:
         """Returns a list of all providers."""
         return self.hospital_data.get("ProviderDirectory", [])
 
+    def get_insurance_status(self, payer_name):
+        """
+        Checks if a given insurance payer is accepted by the hospital.
+        """
+        if not self.hospital_data:
+            return False
+        return payer_name in self.hospital_data.get("AcceptedInsurances", [])
+
     def check_established_patient(self, patient_id, provider_name):
         """
         Determines if a patient is 'ESTABLISHED' with a given provider

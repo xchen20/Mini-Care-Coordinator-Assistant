@@ -50,6 +50,11 @@ def chat():
     if not patient_data:
         return jsonify({"error": "Patient not found"}), 404
 
+    primary_insurance = patient_data.get('insurance', {}).get('primary', {}).get('payer')
+    if primary_insurance:
+        is_accepted = data_manager.get_insurance_status(primary_insurance)
+        patient_data['insurance']['primary']['is_accepted'] = is_accepted
+
     for provider in data_manager.get_all_providers():
         # Dynamically enrich the patient data based on the user's prompt
         provider_name_parts = provider['name'].replace(',', '').lower().split()
@@ -63,6 +68,14 @@ def chat():
                     "duration_minutes": appointment_rules["Types"][status].get("duration_minutes"),
                     "arrival_instructions": appointment_rules["Arrival"].get(status)
                 }
+            
+            for referral in patient_data.get('referred_providers', []):
+                if referral.get('provider_id') == provider.get('provider_id'):
+                    referred_dept_name = referral.get('department')
+                    for dept in provider.get('departments', []):
+                        if dept.get('name') == referred_dept_name:
+                            patient_data[f"referred_location_for_{provider['provider_id']}"] = dept
+                            break
 
     combined_context = {
         "Semantically Relevant Hospital Knowledge": semantic_context,
