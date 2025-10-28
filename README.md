@@ -2,6 +2,8 @@
 
 This project is an intelligent assistant designed to help nurses with patient appointment booking and contextual Q&A, powered by a Large Language Model (LLM).
 
+![Demo Screenshot](landing_page.png)
+
 ## Architecture
 
 The project follows a modern, decoupled architecture:
@@ -58,3 +60,26 @@ This command will:
   - **Body**: `{ "prompt": "your question", "patient_id": 1 }`
 - `POST /transcribe`: Transcribes an audio file.
 - `POST /synthesize-speech`: Converts text to speech.
+
+## Data Management and Seeding
+
+This project uses a set of 5 sample patients for demonstration purposes. On the first launch, the backend service automatically seeds the SQLite database with this data from the `backend/patient_sheet.json` file.
+
+For this Proof of Concept (POC), patient data is static. A production-ready application would ideally include a user interface for adding, editing, and managing patients dynamically.
+
+## Project Structure
+
+The project is organized as a monorepo with distinct frontend and backend directories:
+
+```
+MLChallenge/
+├── backend/         # All backend code and Docker configurations
+│   ├── src/         # Main source code for the Flask application
+│   │   ├── api/     # Defines the Flask app factory, routes, and DB
+│   │   └── core/    # Contains core business logic (e.g., CareDataManager)
+│   └── ...
+├── frontend/        # All frontend React/Vite code
+│   └── ...
+├── docker-compose.yml # Main orchestration file to run all services
+└── README.md        # This file
+```
