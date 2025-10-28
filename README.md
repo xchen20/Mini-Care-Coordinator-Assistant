@@ -23,7 +23,7 @@ The entire application stack (frontend and backend) is containerized and can be 
 
 ### 1. Environment Setup
 
-In the root directory of the project (`MLChallenge/`), create a file named `.env`. This file will store your secret API key.
+In the root directory of the project, create a file named `.env`. This file will store your secret API key.
 
 Add your OpenAI API key to this file:
 
@@ -34,7 +34,7 @@ OPENAI_API_KEY=sk-your-openai-api-key-here
 
 ### 2. Build and Run
 
-From the root directory of the project (`MLChallenge/`), run the following command:
+From the root directory of the project, run the following command:
 
 ```bash
 docker-compose up --build
